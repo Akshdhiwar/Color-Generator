@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<style>
+  body {
+    text-align: center;
+  }
+</style>
+<body>
+  <p id="clrname">#------</p>
+  <button onclick="getcolor()">Get New Color</button>
+</body>
+<script>
+  function getcolor() {
+    let sybmol = "123456789abcdf";
+    let color = "#";
+
+    color = color + ((Math.random() * 0xffffff) << 0).toString(16);
+    console.log(color.length);
+    if (color.length < 7) {
+      color += Math.floor(Math.random() * 6);
+    }
+    console.log(color);
+
+    document.body.style.background = color;
+    document.getElementById("clrname").innerHTML = color;
+  }
+</script>
